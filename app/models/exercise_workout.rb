@@ -1,0 +1,2 @@
+class ExerciseWorkout < ApplicationRecord
+end
