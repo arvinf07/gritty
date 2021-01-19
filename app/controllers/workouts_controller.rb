@@ -11,7 +11,9 @@ class WorkoutsController < ApplicationController
   end
 
   def new 
-    
+    @workout = Workout.new
+    ## modify model to accept exercises nested resources 
+    ## and make sure duplicates cant be created 
   end
 
 end
