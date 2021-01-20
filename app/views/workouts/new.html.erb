@@ -3,6 +3,7 @@
 <%= form_for @workout do |f| %>
   <%= f.label "Create a name for your workout" %><br>
   <%= f.text_field :name, placeholder: "The Crippler" %><br><br>
+  
   <p>Add Exercises</p>
   <%= f.fields_for :exercises_workouts do |e| %>
     <%#how can I add a nil value to collextion_select%>

@@ -11,6 +11,20 @@
   </head>
 
   <body>
+    <% flash.each do |type, msg| %>
+      <div class="alert alert-info">
+        <%= msg %>
+      </div>
+    <% end %>
+    
+    <% if @errors %>
+      <ul>
+      <% @errors.each do |error| %>
+        <li><%= error %></li>
+    <% end %> 
+      </ul>
+    <%end%>
+
     <%= yield %>
   </body>
 </html>
