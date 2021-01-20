@@ -1,6 +1,6 @@
 class ExercisesWorkout < ApplicationRecord
-  belongs_to :exercise
+  belongs_to :exercise #adds presence validation for exercise
   belongs_to :workout
 
-  validates :sets, :reps, :workout_id, :exercise_id, presence: true
+  validates :sets, :reps, presence: true
 end

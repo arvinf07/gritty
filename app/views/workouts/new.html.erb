@@ -1,12 +1,12 @@
 
 
-<%= form_for @workout, url: user_workouts_path(@user) do |f| %>
+<%= form_for @workout do |f| %>
   <%= f.label "Create a name for your workout" %><br>
   <%= f.text_field :name, placeholder: "The Crippler" %><br><br>
   <p>Add Exercises</p>
-  <%= f.fields_for :exercise_workouts do |e| %>
+  <%= f.fields_for :exercises_workouts do |e| %>
     <%#how can I add a nil value to collextion_select%>
-    <%= e.collection_select :exercise_id, Exercise.all, :id, :name %>
+    <%= e.collection_select :exercise_id, Exercise.all, :id, :name, {selected: "blank"} %>
     <%= e.label :sets %>
     <%= e.number_field :sets, min: 1, max: 100 %>
     <%= e.label :reps %>

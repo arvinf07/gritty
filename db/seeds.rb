@@ -21,3 +21,21 @@
 # 3.Push through the heels to jump back up and return to the starting position.
 # 4.Repeat until set is complete."
 # )
+
+# Exercise.create(name: "Lunges", difficulty: "Intermediate", equipment: 'None', image: "https://177d01fbswx3jjl1t20gdr8j-wpengine.netdna-ssl.com/wp-content/uploads/2019/05/walking-lunges-optimized.gif",
+# description: "1.Start by standing up tall.
+# 2.Step forward with one foot until your leg reaches a 90-degree angle.
+# 3.Lift your front lunging leg to return to the starting position.
+# 4.Repeat until set is complete")
+
+# Exercise.create(name: "Pull-ups", difficulty: "Advanced", equipment: 'Pull up bar', image: "https://177d01fbswx3jjl1t20gdr8j-wpengine.netdna-ssl.com/wp-content/uploads/2019/05/walking-lunges-optimized.gif",
+# description: "1.Grab The Bar. Grip it about shoulder-width apart. 
+# 2.Hang. Raise your feet off the floor by bending your knees. 
+# 3.Pull. Pull yourself up by pulling your elbows down to the floor. 
+# 4.Pass The bar.
+# 5.Repeat.")
+
+# Exercise.create(name: "Forearm Plank", difficulty: "Intermediate", equipment: 'None', image: "https://3i133rqau023qjc1k3txdvr1-wpengine.netdna-ssl.com/wp-content/uploads/2014/08/Forearm-Plank_Exercise.jpg",
+# description: "1.Assume a push-up position but bend your arms at your elbows so your weight rests on your forearms.
+# 2.Tighten your abs, clench your glutes and keep your body straight from head to heels.
+# 3.Hold as long as you can.")
