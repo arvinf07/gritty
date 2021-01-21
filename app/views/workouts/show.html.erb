@@ -1,1 +1,15 @@
 <h1><%= @workout.name %></h1>
+<h2>Difficulty: </h2>
+<h2>Created by: <%= @creator.name %></h2>
+
+<h2>Exercises</h2>
+
+<ul>
+  <% @workout.exercises.each do |exercise| %>
+    <%= link_to exercise.name, exercise_path(exercise), target: "_blank" %>
+    <li>
+      <%= image_tag exercise.image, size: "100x100" %>
+      <%= exercise.sets_and_reps(@workout) %><br><br>
+    </li>
+  <%end%>
+</ul>

@@ -18,18 +18,18 @@ class WorkoutsController < ApplicationController
   end
 
   def create
-    current_user.workouts.build(workout_params)
+    @workout = current_user.workouts.build(workout_params)
     if @user.save
       redirect_to workout_path(@user.workouts.last)
     else
-      #render page with errors
-      #set value to errors and workout instance vars
+      @errors = workout.errors.full_messages
       render 'new'
     end
   end
 
   def show
     @workout = Workout.find_by_id(params[:id])
+    @creator = User.find_by_id(@workout.user_id)
     redirect_to workouts_path, alert: "That workout does not exist" if @workout.nil?
   end 
 

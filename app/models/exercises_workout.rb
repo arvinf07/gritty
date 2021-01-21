@@ -3,4 +3,5 @@ class ExercisesWorkout < ApplicationRecord
   belongs_to :workout
 
   validates :sets, :reps, presence: true
+
 end
