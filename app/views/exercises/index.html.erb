@@ -1,7 +1,7 @@
 <% @exercises.each do |exercise| %>
   <div>
     <h3><%= exercise.name %></h3>
-    <%= image_tag exercise.image, size: "100x100" %><br>
+    <a href="<%=exercise_path(exercise)%>"><%= image_tag exercise.image, size: "100x100" %><br></a>
     Equipment: <%= exercise.equipment %><br>
     Difficulty: <%= exercise.difficulty %>   
     <br> 

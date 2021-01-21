@@ -26,7 +26,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    current_user
+    ##Why is it not redirecting to current_user page
+    @user = User.find_by_id(params[:id])  
   end
   
   private

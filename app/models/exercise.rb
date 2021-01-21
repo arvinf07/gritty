@@ -10,7 +10,7 @@ class Exercise < ApplicationRecord
   end
 
   def sets_and_reps(workout)
-    exercise = ExercisesWorkout.where(workout_id: workout.id, exercise_id: self.id).first
+    exercise = ExercisesWorkout.find_by(workout_id: workout.id, exercise_id: self.id)
     if exercise.sets > 1
       "#{exercise.sets} sets of #{exercise.reps} reps."
     else

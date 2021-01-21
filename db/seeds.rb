@@ -31,11 +31,21 @@
 # Exercise.create(name: "Pull-ups", difficulty: "Advanced", equipment: 'Pull up bar', image: "https://177d01fbswx3jjl1t20gdr8j-wpengine.netdna-ssl.com/wp-content/uploads/2019/05/walking-lunges-optimized.gif",
 # description: "1.Grab The Bar. Grip it about shoulder-width apart. 
 # 2.Hang. Raise your feet off the floor by bending your knees. 
-# 3.Pull. Pull yourself up by pulling your elbows down to the floor. 
+# 3.Pull yourself up by pulling your elbows down to the floor. 
 # 4.Pass The bar.
 # 5.Repeat.")
 
-# Exercise.create(name: "Forearm Plank", difficulty: "Intermediate", equipment: 'None', image: "https://3i133rqau023qjc1k3txdvr1-wpengine.netdna-ssl.com/wp-content/uploads/2014/08/Forearm-Plank_Exercise.jpg",
-# description: "1.Assume a push-up position but bend your arms at your elbows so your weight rests on your forearms.
-# 2.Tighten your abs, clench your glutes and keep your body straight from head to heels.
-# 3.Hold as long as you can.")
+# Exercise.create(name: "Crunch", difficulty: "Beginner", equipment: 'None', image: "https://i.imgur.com/UJAnRhJ.gif",
+# description: "1.Lie down on your back. Plant your feet on the floor, hip-width apart. Bend your knees and place your arms across your chest. Contract your abs and inhale.
+# 2.Exhale and lift your upper body, keeping your head and neck relaxed.
+# 3.Inhale and return to the starting position.")
+
+# Exercise.create(name: "Calf Raises", difficulty: "Beginner", equipment: 'None', image: "https://thumbs.gfycat.com/EntireThatGazelle-max-1mb.gif",
+# description: "1.Spread feet shoulder-width apart, then slowly raise your heels, keeping your knees extended (but not locked). Pause for one second.
+# 2.Slowly lower your heels back to the ground.
+# 3.Repeat")
+
+
+# Exercise.create(name: "High Knees", difficulty: "Intermediate", equipment: 'None', image: "https://i.pinimg.com/originals/69/b9/cf/69b9cf8b3c0a6d971ce0e1ac83a17c03.gif",
+# description: "1.Stand with your feet hip-width apart. Lift up your left knee to your chest.
+# 2.Switch to lift your right knee to your chest. Continue the movement, alternating legs and moving at a sprinting or running pace.")
