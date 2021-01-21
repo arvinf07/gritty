@@ -1,0 +1,9 @@
+<% @exercises.each do |exercise| %>
+  <div>
+    <h3><%= exercise.name %></h3>
+    <%= image_tag exercise.image, size: "100x100" %><br>
+    Equipment: <%= exercise.equipment %><br>
+    Difficulty: <%= exercise.difficulty %>   
+    <br> 
+  </div>  
+<%end%>

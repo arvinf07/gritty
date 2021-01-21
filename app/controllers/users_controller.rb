@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :redirect_if_not_logged_in, only: [:edit, :update, :edit]
+  skip_before_action :redirect_if_not_logged_in
 
   def edit
     current_user
@@ -17,6 +17,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      session[:user_id] = @user.id
       redirect_to user_path(@user)
     else
       @errors = @user.errors.full_messages

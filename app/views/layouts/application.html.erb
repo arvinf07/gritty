@@ -11,10 +11,15 @@
   </head>
 
   <body>
-    
-    <%= link_to 'Logout', logout_path if logged_in? %>
-    <%= link_to 'Login', new_session_path unless logged_in? %>
-
+    <% if logged_in? %>
+      <%= link_to 'Logout', logout_path, method: :delete %>
+      <%= link_to 'Exercises', exercises_path %>
+      <%= link_to 'Create a new workout', new_workout_path %>
+      <%= link_to 'Workouts', workouts_path %>
+    <%else %>
+      <%= link_to 'Login', new_session_path %>
+      <%= link_to "Create an account", new_user_path %>
+    <% end %>
 
 
     <% flash.each do |type, msg| %>

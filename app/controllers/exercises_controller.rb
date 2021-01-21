@@ -10,5 +10,9 @@ class ExercisesController < ApplicationController
     end
   end
 
+  def index
+    @exercises = Exercise.all
+  end
+
 
 end

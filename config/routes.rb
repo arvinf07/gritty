@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   
   resources :users do 
-    resources :workouts, only: [:index, :new]
+    resources :workouts, only: [:index, :new]       ##CREATE NAVBAR
   end
 
   resources :workouts
