@@ -1,8 +1,5 @@
 class UsersController < ApplicationController
-
-  def new
-    @user = User.new
-  end
+  skip_before_action :redirect_if_not_logged_in, only: [:edit, :update, :edit]
 
   def edit
     current_user
@@ -11,6 +8,10 @@ class UsersController < ApplicationController
 
   def update
 
+  end
+
+  def new
+    @user = User.new
   end
 
   def create

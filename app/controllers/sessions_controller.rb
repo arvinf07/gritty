@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
+  skip_before_action :redirect_if_not_logged_in, only: [:omniauth, :new, :create]
 
-  
   def omniauth
     ##move this to the model
     @user = User.find_or_create_by(provider: auth['provider'], uid: auth['uid']) do |u|
@@ -30,7 +30,11 @@ class SessionsController < ApplicationController
     end
   end
 
-  ##Establish the logout actions
+  def destroy
+    reset_session
+    redirect_to '/'
+  end
+
   private
   def auth
     request.env['omniauth.auth']

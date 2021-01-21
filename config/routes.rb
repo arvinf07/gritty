@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   root to: 'welcome#home'
   get '/auth/:provider/callback', to: 'sessions#omniauth'
 
-  resources :sessions, only: [:new, :create, :destroy]
+  resources :sessions, only: [:new, :create]
+  delete '/logout', to: 'sessions#destroy'
   
   resources :users do 
     resources :workouts, only: [:index, :new]
