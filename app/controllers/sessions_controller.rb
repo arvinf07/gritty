@@ -1,8 +1,23 @@
 class SessionsController < ApplicationController
-  ##setting up omniauth login
 
-  def login
+  
+  def omniauth
+    ##move this to the model
+    @user = User.find_or_create_by(provider: auth['provider'], uid: auth['uid']) do |u|
+      u.name = auth['info']['name']
+      u.password = SecureRandom.hex(15)
+      u.email = auth['info']['email']
+    end
 
+    if @user.valid?
+      session[:user_id] = @user.id
+      redirect_to user_path(@user)
+    else  
+      redirect_to new_session_path, alert: "Something went wrong."
+    end
+  end
+
+  def new
   end
 
   def create
@@ -11,10 +26,14 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to user_path(@user)
     else
-      redirect_to '/login', alert: "The password and/or email are incorrect"
+      redirect_to new_session_path, alert: "The password and/or email are incorrect"
     end
   end
 
   ##Establish the logout actions
+  private
+  def auth
+    request.env['omniauth.auth']
+  end
 
 end
