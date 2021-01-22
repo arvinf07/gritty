@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :workouts
+  has_many :comments
 
   has_secure_password
   validates :name, :email, presence: true

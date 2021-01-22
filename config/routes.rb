@@ -10,7 +10,9 @@ Rails.application.routes.draw do
     resources :workouts, only: [:index]    # my page link keeps redirecting to previouse user##
   end
 
-  resources :workouts
+  resources :workouts do
+    resources :comments, only: [:new]
+  end
 
   resources :exercises
 
