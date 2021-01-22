@@ -6,6 +6,12 @@ module ExercisesHelper
     steps.map do |step|
       content_tag :li, step
     end
+
+    # content_tag(:ul) do
+    #   (1..5).to_a.map do
+    #     content_tag(:li, step_number, class: "step)
+    #   end.reduce(&:+)
+    # end
   end
 
 end

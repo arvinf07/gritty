@@ -6,7 +6,7 @@ class Exercise < ApplicationRecord
 
   scope :by_difficulty, -> (difficulty) { where(difficulty: difficulty) }
 
-  
+  #############Should this be a helper??#################
   def sets_and_reps(workout)
     exercise = ExercisesWorkout.find_by(workout_id: workout.id, exercise_id: self.id)
     if exercise.sets > 1

@@ -31,6 +31,12 @@ class CommentsController < ApplicationController
 
   end
 
+  def destroy
+    workout = Comment.find_by_id(params[:id]).workout
+    Comment.find_by_id(params[:id]).destroy
+    redirect_to workout_path(workout)
+  end
+
   private
   def comment_params
     params.require(:comment).permit(:workout_id, :content)

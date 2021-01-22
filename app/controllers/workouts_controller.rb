@@ -16,8 +16,8 @@ class WorkoutsController < ApplicationController
 
   def create
     @workout = current_user.workouts.build(workout_params)
-    if @user.save
-      redirect_to workout_path(@user.workouts.last)
+    if current_user.save
+      redirect_to workout_path(current_user.workouts.last)
     else
       @errors = workout.errors.full_messages
       render 'new'

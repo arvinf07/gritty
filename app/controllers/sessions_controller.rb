@@ -18,14 +18,14 @@ class SessionsController < ApplicationController
   end
 
   def new
-    redirect_to user_workouts_path(current_user)
+    redirect_to user_workouts_path(current_user) if logged_in?
   end
 
   def create
     @user = User.find_by_email(params[:email])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
-      redirect_to user_path(@user)
+      redirect_to user_workouts_path(@user)
     else
       redirect_to new_session_path, alert: "The password and/or email are incorrect"
     end

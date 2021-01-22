@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>WorkIt</title>
+    <title>Gritty</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,31 +11,10 @@
   </head>
 
   <body>
-    <% if logged_in? %>
-      <%= link_to 'Logout', logout_path, method: :delete %>
-      <%= link_to "My page", user_workouts_path(current_user) %>
-      <%= link_to 'Exercises', exercises_path %>
-      <%= link_to 'Create a new workout', new_workout_path %>
-      <%= link_to 'Workouts', workouts_path %>
-    <%else %>
-      <%= link_to 'Login', new_session_path %>
-      <%= link_to "Create an account", new_user_path %>
-    <% end %>
-
-
-    <% flash.each do |type, msg| %>
-      <div class="alert alert-info">
-        <%= msg %>
-      </div>
-    <% end %>
     
-    <% if @errors %>
-      <ul>
-      <% @errors.each do |error| %>
-        <li><%= error %></li>
-      <% end %> 
-      </ul>
-    <%end%>
+    <%= render 'layouts/links'  %>
+
+   <%= render 'layouts/errors' %>
 
     <%= yield %>
   </body>
