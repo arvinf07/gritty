@@ -1,6 +1,7 @@
 <h1>Creating a comment for <%=@workout.name%></h1>
 
-<%= form_for @comment, @workout do |f| %>
-  <%= f.text_area :content %>
-  <%= f.sumbit %>
-<%= end %>
+<%= form_for @comment do |f| %>
+  <%= f.hidden_field :workout_id %>
+  <%= f.text_area :content %><br>
+  <%= f.submit %>
+<% end %>
