@@ -10,8 +10,25 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to workout_path(@comment.workout_id)
     else
+      @errors = @comment.errors.full_messages
+      @workout = @comment.workout
       render 'new'
     end
+  end
+
+  def edit
+    @comment = Comment.find_by_id(params[:id])
+  end
+
+  def update
+    @comment = Comment.find_by_id(params[:id])
+    if @comment.update(comment_params)
+      redirect_to workout_path(@comment.workout_id)
+    else
+      @errors = @comment.errors.full_messages
+      render 'edit'
+    end
+
   end
 
   private

@@ -1,7 +1,3 @@
 <h1>Creating a comment for <%=@workout.name%></h1>
 
-<%= form_for @comment do |f| %>
-  <%= f.hidden_field :workout_id %>
-  <%= f.text_area :content %><br>
-  <%= f.submit %>
-<% end %>
+<%= render partial: 'form' %>
