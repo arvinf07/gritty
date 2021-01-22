@@ -18,6 +18,7 @@ class SessionsController < ApplicationController
   end
 
   def new
+    redirect_to user_workouts_path(current_user)
   end
 
   def create

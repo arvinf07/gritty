@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :redirect_if_not_logged_in
+  skip_before_action :redirect_if_not_logged_in    ##Make Crud Actions for current_user owned objects##
 
   def edit
     current_user
