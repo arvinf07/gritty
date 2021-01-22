@@ -4,6 +4,8 @@ class Exercise < ApplicationRecord
 
   validates :name, uniqueness: true, presence: true
 
+  scope :by_difficulty, -> (difficulty) { where(difficulty: difficulty) }
+
   #scope methods
   def self.by_difficulty(difficulty)
     Exercise.where(difficulty: difficulty)
@@ -17,5 +19,5 @@ class Exercise < ApplicationRecord
       "#{exercise.sets} set of #{exercise.reps} reps."
     end
   end
-
+ 
 end

@@ -10,8 +10,12 @@ class ExercisesController < ApplicationController
     end
   end
 
-  def index
-    @exercises = Exercise.all
+  def index  
+    if params[:difficulty]
+      @exercises = Exercise.by_difficulty(params[:difficulty])
+    else
+      @exercises = Exercise.all
+    end
   end
 
 
