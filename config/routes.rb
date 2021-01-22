@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   
   resources :users do 
-    resources :workouts, only: [:index, :new]       ##CREATE NAVBAR
+    resources :workouts, only: [:index]    # my page link keeps redirecting to previouse user##
   end
 
   resources :workouts

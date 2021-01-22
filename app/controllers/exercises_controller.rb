@@ -1,7 +1,5 @@
 class ExercisesController < ApplicationController
 
-  #Should users be able to create exercises
-
   def show 
     if @exercise = Exercise.find_by_id(params[:id])
       render 'show'

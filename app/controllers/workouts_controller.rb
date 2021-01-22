@@ -1,14 +1,17 @@
 class WorkoutsController < ApplicationController
 
   def index
-    @workouts = Workout.all
+    if params[:user_id] && @user = User.find_by_id(params[:user_id])
+      @workouts = @user.workouts
+      render 'user_workouts'
+    else
+      @workouts = Workout.all
+    end
   end
 
   def new 
     @workout = Workout.new
     10.times {@workout.exercises_workouts.build}
-    ## modify model to accept exercises nested resources 
-    ## and make sure duplicates cant be created 
   end
 
   def create
@@ -23,7 +26,7 @@ class WorkoutsController < ApplicationController
 
   def show
     @workout = Workout.find_by_id(params[:id])
-    @creator = User.find_by_id(@workout.user_id)
+    @user = User.find_by_id(@workout.user_id)
     redirect_to workouts_path, alert: "That workout does not exist" if @workout.nil?
   end 
 

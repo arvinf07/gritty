@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
 
     if @user.valid?
       session[:user_id] = @user.id
-      redirect_to user_path(@user)
+      redirect_to user_workouts_path(@user)
     else  
       redirect_to new_session_path, alert: "Something went wrong."
     end

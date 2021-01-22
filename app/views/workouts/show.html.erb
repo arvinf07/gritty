@@ -1,6 +1,6 @@
 <h1><%= @workout.name %></h1>
 <h2>Difficulty: </h2>
-<h2>Created by: <%= @creator.name %></h2>
+<h2>Created by: <%= link_to @user.name, user_workouts_path(@user) %></h2>
 
 <h2>Exercises</h2>
 
