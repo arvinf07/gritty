@@ -12,6 +12,7 @@ class Workout < ApplicationRecord
     self.user.name
   end
 
+  ##Implement this before persisting
   def self.by_difficulty(difficulty)
     #selects the workouts where 
     #exercises of the given difficulty
