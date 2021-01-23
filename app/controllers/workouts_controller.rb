@@ -17,7 +17,7 @@ class WorkoutsController < ApplicationController
   def create
     @workout = current_user.workouts.build(workout_params)
     if @workout.save
-      redirect_to workout_path(current_user.workouts.last)
+      redirect_to workout_path(@workout)
     else
       @errors = @workout.errors.full_messages
       10.times {@workout.exercises_workouts.build}
@@ -33,10 +33,17 @@ class WorkoutsController < ApplicationController
 
   def edit
     @workout = Workout.find_by_id(params[:id])
+    5.times {@workout.exercises_workouts.build}
   end
 
   def update
-    @workout = Workout.find_by_id(params[:id]) ##Finish update action. Make sure create action still works
+    @workout = Workout.find_by_id(params[:id]) 
+    if @workout.update(workout_params)
+      redirect_to workout_path(@workout)
+    else
+      @errors = @workout.errors.full_messages   ##Exercises are duplicated when name is left blank##
+      render 'edit'
+    end
   end
 
   def destroy

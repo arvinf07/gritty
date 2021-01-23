@@ -1,0 +1,11 @@
+<ul>
+  <% @workout.comments.each do |comment| %>
+    <li><%= link_to comment.user.name, user_workouts_path(comment.user)%><%= " said: #{comment.content}" %></li>
+    <% if comment.user == current_user %>
+      <%= button_to "Edit", edit_comment_path(comment), method: :get %>
+      <%= button_to "Delete", comment_path(comment), method: :delete %>
+    <%end%>
+    <br>
+  <%end%>
+</ul>
+<h4><%= link_to "Create a new comment", new_workout_comment_path(@workout) %></h4>
