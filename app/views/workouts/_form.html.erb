@@ -4,12 +4,12 @@
   
   <p>Add Exercises</p>
   <%= f.fields_for :exercises_workouts do |e| %>
-    <%#how can I add a nil value to collextion_select%>
+    <%=delete_exercise(e)%>
     <%= e.collection_select :exercise_id, Exercise.all, :id, :name, value: :exercise_id %>
     <%= e.label :sets %>
     <%= e.number_field :sets, min: 1, max: 100 %>
     <%= e.label :reps %>
-    <%= e.number_field :reps, min: 1, max: 100  %>
+    <%= e.number_field :reps, min: 1, max: 100  %><br>
     <br><br>
   <% end %>
   <%= f.submit %>
