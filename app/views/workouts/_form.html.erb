@@ -3,14 +3,14 @@
   <%= f.text_field :name, placeholder: "The Crippler" %><br><br>
   
   <p>Add Exercises</p>
-  <%= f.fields_for :exercises_workouts do |e| %>
-    <%=delete_exercise(e)%>
-    <%= e.collection_select :exercise_id, Exercise.all, :id, :name, value: :exercise_id %>
-    <%= e.label :sets %>
-    <%= e.number_field :sets, min: 1, max: 100 %>
-    <%= e.label :reps %>
-    <%= e.number_field :reps, min: 1, max: 100  %><br>
-    <br><br>
-  <% end %>
-  <%= f.submit %>
-<% end %>  
+    <%= f.fields_for :exercises_workouts do |e| %>
+      <%=delete_exercise(e)%>
+      <%= e.collection_select :exercise_id, Exercise.all, :id, :name, value: :exercise_id %>
+      <%= e.label :sets %>
+      <%= e.number_field :sets, min: 1, max: 100 %>
+      <%= e.label :reps %>
+      <%= e.number_field :reps, min: 1, max: 100  %><br>
+      <br><br>
+    <% end %>
+    <%= f.submit class: 'btn btn-primary btn-lg mb-5' %>
+  <% end %>  
