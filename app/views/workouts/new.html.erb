@@ -1,18 +1,3 @@
+<h1>Make a new workout</h1>
 
-
-<%= form_for @workout do |f| %>
-  <%= f.label "Create a name for your workout" %><br>
-  <%= f.text_field :name, placeholder: "The Crippler" %><br><br>
-  
-  <p>Add Exercises</p>
-  <%= f.fields_for :exercises_workouts do |e| %>
-    <%#how can I add a nil value to collextion_select%>
-    <%= e.collection_select :exercise_id, Exercise.all, :id, :name, {selected: "blank"} %>
-    <%= e.label :sets %>
-    <%= e.number_field :sets, min: 1, max: 100 %>
-    <%= e.label :reps %>
-    <%= e.number_field :reps, min: 1, max: 100  %>
-    <br><br>
-  <% end %>
-  <%= f.submit %>
-<% end %>  
+<%= render 'form' %>

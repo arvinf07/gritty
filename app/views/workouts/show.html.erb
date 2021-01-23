@@ -1,7 +1,6 @@
 <h1><%= @workout.name %></h1>
-<h2>Difficulty: </h2>
 
-<% if workout.user == current_user %>
+<% if @workout.user == current_user %>
   <%= button_to "Edit", edit_workout_path(@workout), method: :get %>
   <%= button_to "Delete", workout_path(@workout), method: :delete %>
 <%end%>

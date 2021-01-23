@@ -32,11 +32,11 @@ class WorkoutsController < ApplicationController
   end 
 
   def edit
-
+    @workout = Workout.find_by_id(params[:id])
   end
 
   def update
-
+    @workout = Workout.find_by_id(params[:id]) ##Finish update action. Make sure create action still works
   end
 
   def destroy
