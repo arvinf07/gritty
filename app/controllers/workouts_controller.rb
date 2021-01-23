@@ -41,8 +41,8 @@ class WorkoutsController < ApplicationController
     if @workout.update(workout_params)
       redirect_to workout_path(@workout)
     else
-      @errors = @workout.errors.full_messages   ##Exercises are duplicated when name is left blank##
-      render 'edit'
+      @errors = @workout.errors.full_messages  
+      render 'edit'                               
     end
   end
 
@@ -53,7 +53,7 @@ class WorkoutsController < ApplicationController
 
   private
   def workout_params
-    params.require(:workout).permit(:name, exercises_workouts_attributes: [:exercise_id, :sets, :reps])
+    params.require(:workout).permit(:name, exercises_workouts_attributes: [:id, :exercise_id, :sets, :reps])
   end
 
 end
