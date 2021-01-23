@@ -1,0 +1,9 @@
+<% @exercises.each do |exercise| %>
+  <div>
+    <h3><%= exercise.name %></h3>
+    <a href="<%=exercise_path(exercise)%>"><%= image_tag exercise.image, size: "100x100" %><br></a>
+    Equipment: <%= exercise.equipment %><br>
+    Difficulty: <%= exercise.difficulty %>   
+    <br> 
+  </div>  
+<%end%>
