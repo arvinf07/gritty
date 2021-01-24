@@ -1,13 +1,15 @@
 <% flash.each do |type, msg| %>
-  <div class="alert alert-info">
-    <p class="alert alert-danger w-50"><%= msg %></p>
+  <div>
+  <p class="alert alert-danger w-50 " role="alert"><%= msg %></p>
   </div>
 <% end %>
 
-<% if @errors %>
-  <ul>
-  <% @errors.each do |error| %>
-    <li class="alert alert-danger w-50"><%= error %></li>
-  <% end %> 
-  </ul>
-<%end%>
+<div >
+  <% if @errors %>
+    <ul>
+    <% @errors.each do |error| %>
+      <li class="alert alert-danger w-50" role="alert"><%= error %></li>
+    <% end %> 
+    </ul>
+  <%end%>
+</div>
