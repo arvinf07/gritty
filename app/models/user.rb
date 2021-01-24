@@ -3,8 +3,7 @@ class User < ApplicationRecord
   has_many :comments
 
   has_secure_password
-  validates :name, :email, presence: true
-  validates :name, :email, uniqueness: true
+  validates :name, :email, presence: true, uniqueness: true
 
   def self.from_oauth(auth)
     User.find_or_create_by(provider: auth['provider'], uid: auth['uid']) do |u|

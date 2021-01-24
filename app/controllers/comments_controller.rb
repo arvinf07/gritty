@@ -1,8 +1,11 @@
 class CommentsController < ApplicationController
 
   def new
-    @workout = Workout.find_by_id(params[:workout_id])
-    @comment = @workout.comments.build
+    if @workout = Workout.find_by_id(params[:workout_id])
+      @comment = @workout.comments.build
+    else
+      redirect_to workouts_path, alert: 'That workout does not exist'
+    end
   end
  
   def create
