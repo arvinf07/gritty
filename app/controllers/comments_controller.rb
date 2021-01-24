@@ -17,11 +17,11 @@ class CommentsController < ApplicationController
   end
 
   def edit
-    @comment = Comment.find_by_id(params[:id])
+    current_comment
   end
 
   def update
-    @comment = Comment.find_by_id(params[:id])
+    current_comment
     if @comment.update(comment_params)
       redirect_to workout_path(@comment.workout_id)
     else
@@ -32,14 +32,18 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    workout = Comment.find_by_id(params[:id]).workout
-    Comment.find_by_id(params[:id]).destroy
+    workout = current_comment.workout
+    @comment.destroy
     redirect_to workout_path(workout)
   end
 
   private
   def comment_params
     params.require(:comment).permit(:workout_id, :content)
+  end
+
+  def current_comment
+    @comment ||= Comment.find_by_id(params[:id])
   end
 
 end

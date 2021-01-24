@@ -28,3 +28,11 @@ div.field_with_errors{
   box-shadow: 1px 1px 1px #aaaaaa;
   margin-top: 10px;
 }
+
+li.nav-item{
+  color: rgba(240, 114, 11, 0.932);
+}
+
+ul.rounded-pill{
+  background-color: #4b4848;
+}

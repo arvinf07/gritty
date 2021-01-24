@@ -1,19 +1,19 @@
 <% if logged_in? %>
   <ul class="nav border border-3 mb-4 rounded-pill">
-    <li class="nav-item">
+    <li class="nav-item text-reset">
       <%= link_to 'Logout', logout_path, method: :delete, class: "nav-link active"%>
     </li>
-    <li class="nav-item">
+    <li class="nav-item text-reset">
       <%= link_to "My workouts", user_workouts_path(current_user), class: "nav-link active" %>
     </li>
-    <li class="nav-item">
+    <li class="nav-item text-reset">
       <%= link_to 'Exercises', exercises_path, class: "nav-link active" %>
     </li>
-    <li class="nav-item">
+    <li class="nav-item text-reset">
       <%= link_to 'Create a new workout', new_workout_path, class: "nav-link active" %>
      
     </li>
-    <li class="nav-item">
+    <li class="nav-item text-reset">
       <%= link_to 'Workouts', workouts_path, class: "nav-link active" %>
      
     </li>

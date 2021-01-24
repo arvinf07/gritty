@@ -3,7 +3,6 @@ class UsersController < ApplicationController
 
   def edit
     current_user
-    ##Edit the partial so that only some fields appear on edit form.
   end
 
   def update

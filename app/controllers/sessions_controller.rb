@@ -2,13 +2,7 @@ class SessionsController < ApplicationController
   skip_before_action :redirect_if_not_logged_in, only: [:omniauth, :new, :create]
 
   def omniauth
-    ##move this to the model
-    @user = User.find_or_create_by(provider: auth['provider'], uid: auth['uid']) do |u|
-      u.name = auth['info']['name']
-      u.password = SecureRandom.hex(15)
-      u.email = auth['info']['email']
-    end
-
+    @user = User.from_oauth(auth)
     if @user.valid?
       session[:user_id] = @user.id
       redirect_to user_workouts_path(@user)

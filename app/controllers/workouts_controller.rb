@@ -36,7 +36,6 @@ class WorkoutsController < ApplicationController
     5.times {@workout.exercises_workouts.build}
   end
 
-  ##Why is my update button not submitting
   def update
     @workout = Workout.find_by_id(params[:id]) 
     if @workout.update(workout_params)
