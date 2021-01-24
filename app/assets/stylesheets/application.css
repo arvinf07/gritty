@@ -13,11 +13,11 @@
  *= require_tree .
  *= require_self
  */
-/* 
- body {
+
+ /* body {
   height: 100%;
-  background: linear-gradient(90deg, #e27802 50%, #374045 50%);
-} */
+  background: linear-gradient(90deg, #f8b869 50%, #7e8486 50%);
+}  */
 
 div.field_with_errors{
   background: #c51244 !important;

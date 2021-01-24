@@ -1,21 +1,30 @@
-<ul class="nav">
-  <li class="nav-item">
-    <%= link_to 'Logout', logout_path, method: :delete, class: "nav-link active"%>
-  </li>
-  <li class="nav-item">
-    <%= link_to "My workouts", user_workouts_path(current_user) %>
-    <a class="nav-link" href="#">Link</a>
-  </li>
-  <li class="nav-item">
-    <%= link_to 'Exercises', exercises_path %>
-    <a class="nav-link" href="#">Link</a>
-  </li>
-  <li class="nav-item">
-    <%= link_to 'Create a new workout', new_workout_path %>
-    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-  </li>
-  <li class="nav-item">
-    <%= link_to 'Workouts', workouts_path %>
-    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-  </li>
-</ul>
+<% if logged_in? %>
+  <ul class="nav border border-3 mb-4 rounded-pill">
+    <li class="nav-item">
+      <%= link_to 'Logout', logout_path, method: :delete, class: "nav-link active"%>
+    </li>
+    <li class="nav-item">
+      <%= link_to "My workouts", user_workouts_path(current_user), class: "nav-link active" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to 'Exercises', exercises_path, class: "nav-link active" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to 'Create a new workout', new_workout_path, class: "nav-link active" %>
+     
+    </li>
+    <li class="nav-item">
+      <%= link_to 'Workouts', workouts_path, class: "nav-link active" %>
+     
+    </li>
+  </ul>
+<% else %>
+  <ul class="nav border border-3 mb-4 rounded-pill">
+    <li class="nav-item">
+      <%= link_to 'Login', new_session_path, class: "nav-link"%>
+    </li>
+    <li class="nav-item">
+      <%= link_to "Create an account", new_user_path, class: "nav-link" %>
+    </li>
+  </ul>
+<%end%>
