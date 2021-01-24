@@ -1,0 +1,21 @@
+<ul class="nav">
+  <li class="nav-item">
+    <%= link_to 'Logout', logout_path, method: :delete, class: "nav-link active"%>
+  </li>
+  <li class="nav-item">
+    <%= link_to "My workouts", user_workouts_path(current_user) %>
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <%= link_to 'Exercises', exercises_path %>
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <%= link_to 'Create a new workout', new_workout_path %>
+    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+  </li>
+  <li class="nav-item">
+    <%= link_to 'Workouts', workouts_path %>
+    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+  </li>
+</ul>
