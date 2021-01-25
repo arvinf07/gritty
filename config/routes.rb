@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: 'welcome#home'
-
   delete '/delete/:id', to: 'exercises_workouts#destroy', as: 'delete'
 
   get '/auth/:provider/callback', to: 'sessions#omniauth'
@@ -19,5 +18,8 @@ Rails.application.routes.draw do
   resources :comments
 
   resources :exercises
+
+  get '*path', to: 'errors#error_404', via: :all
+  
 
 end
