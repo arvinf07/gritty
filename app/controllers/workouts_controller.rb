@@ -26,18 +26,18 @@ class WorkoutsController < ApplicationController
   end
 
   def show
-    @workout = Workout.find_by_id(params[:id])
+    current_workout
     @user = User.find_by_id(@workout.user_id)
     redirect_to workouts_path, alert: "That workout does not exist" if @workout.nil?
   end 
 
   def edit
-    @workout = Workout.find_by_id(params[:id])
+    redirect_if_not_authorized(current_workout)
     5.times {@workout.exercises_workouts.build}
   end
 
   def update
-    @workout = Workout.find_by_id(params[:id]) 
+    current_workout 
     if @workout.update(workout_params)
       redirect_to workout_path(@workout)
     else
@@ -47,13 +47,18 @@ class WorkoutsController < ApplicationController
   end
 
   def destroy
-    Workout.find_by_id(params[:id]).destroy
+    redirect_if_not_authorized(current_workout)
+    @workout.destroy
     redirect_to user_workouts_path(current_user)
   end
 
   private
   def workout_params
     params.require(:workout).permit(:name, exercises_workouts_attributes: [:id, :exercise_id, :sets, :reps])
+  end
+
+  def current_workout
+    @workout ||= Workout.find_by_id(params[:id])
   end
 
 end

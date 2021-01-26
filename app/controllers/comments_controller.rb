@@ -20,7 +20,7 @@ class CommentsController < ApplicationController
   end
 
   def edit
-    current_comment
+    redirect_if_not_authorized(current_comment)
   end
 
   def update
@@ -35,7 +35,8 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    workout = current_comment.workout
+    redirect_if_not_authorized(current_comment)
+    workout = @comment.workout
     @comment.destroy
     redirect_to workout_path(workout)
   end
