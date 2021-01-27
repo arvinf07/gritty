@@ -28,6 +28,7 @@ class WorkoutsController < ApplicationController
   end
 
   def show
+    ##Why is it reapeating sets and reps 
     current_workout
     @user = User.find_by_id(@workout.user_id)
     redirect_to workouts_path, alert: "That workout does not exist" if @workout.nil?

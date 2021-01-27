@@ -7,6 +7,14 @@ class CommentsController < ApplicationController
       redirect_to workouts_path, alert: 'That workout does not exist'
     end
   end
+
+  def index
+    if @user = User.find_by_id(params[:user_id])
+      @comments = @user.comments
+    else
+      @comments = Comment.all
+    end
+  end
  
   def create
     @comment = current_user.comments.build(comment_params)

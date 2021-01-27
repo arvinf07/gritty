@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   delete '/delete/:id', to: 'exercises_workouts#destroy', as: 'delete'
 
   resources :users do 
+    resources :comments, only: [:index]
     resources :workouts, only: [:index]    # my page link keeps redirecting to previouse user##
   end
 

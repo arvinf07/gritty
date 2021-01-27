@@ -9,6 +9,12 @@ class ExercisesController < ApplicationController
   end
 
   def index  
+    filter_exercises
+  end
+  
+  
+  private
+  def filter_exercises
     if params[:difficulty].blank? && params[:equipment].blank?
       @exercises = Exercise.all
 
@@ -22,6 +28,5 @@ class ExercisesController < ApplicationController
       @exercises = Exercise.by_difficulty(params[:difficulty]).by_equipment(params[:equipment])
     end
   end
-
 
 end
