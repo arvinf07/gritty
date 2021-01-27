@@ -5,6 +5,7 @@ class Exercise < ApplicationRecord
   validates :name, uniqueness: true, presence: true
 
   scope :by_difficulty, -> (difficulty) { where(difficulty: difficulty) }
+  
 
   #############Should this be a helper??#################
   def sets_and_reps(workout)

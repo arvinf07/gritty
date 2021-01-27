@@ -1,5 +1,10 @@
 <h1>Workouts</h1>
 
+<%=form_tag(workouts_path, method: 'get') do %>
+  <%= hidden_field_tag :alphabetically %>
+  <%= submit_tag "Order from A-Z" %>
+<%end%>
+
 <ul>
 <% @workouts.each do |workout| %>
   <li><%= link_to workout.name, workout_path(workout) %> by <%= link_to workout.creator, user_workouts_path(workout.user) %>  </li>

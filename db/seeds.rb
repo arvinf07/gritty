@@ -46,6 +46,24 @@
 # 3.Repeat")
 
 
-# Exercise.create(name: "High Knees", difficulty: "Intermediate", equipment: 'None', image: "https://i.pinimg.com/originals/69/b9/cf/69b9cf8b3c0a6d971ce0e1ac83a17c03.gif",
-# description: "1.Stand with your feet hip-width apart. Lift up your left knee to your chest.
-# 2.Switch to lift your right knee to your chest. Continue the movement, alternating legs and moving at a sprinting or running pace.")
+Exercise.create(name: "Seated DB Press", difficulty: "Intermediate", equipment: 'Dumbbells', image: "https://thumbs.gfycat.com/PeacefulFastAmericanalligator-size_restricted.gif",
+description: "1.Sit on an upright bench holding a dumbbell in each hand at shoulder height with your palms facing away from you.
+2.Keep your chest up and your core braced, and look straight forward throughout the move.
+3.Press the weights directly upwards until your arms are straight and the weights touch above your head.
+4.Repeat")
+
+Exercise.create(name: "DB Press", difficulty: "Intermediate", equipment: 'Dumbbells', image: "https://thumbs.gfycat.com/ComfortableGloomyBengaltiger-max-1mb.gif",
+description: "1.Lie on the floor holding a pair of dumbbells above your chest with your arms straight (palms forward), knees bent, and feet flat.
+2.Switch to lift your right knee to your chest. Continue the movement, alternating legs and moving at a sprinting or running pace.")
+
+Exercise.create(name: "DB Deadlifts", difficulty: "Advanced", equipment: 'Dumbbells', image: "https://i.pinimg.com/originals/69/b9/cf/69b9cf8b3c0a6d971ce0e1ac83a17c03.gif",
+description: "1.Stand with your feet hip-width apart. Lift up your left knee to your chest.
+2.Keeping your forearms perpendicular to the ground and elbows at a 45-degree angle to your body, lower the dumbbells until your upper arms touch the floor.")
+
+Exercise.create(name: "DB Bicep Curls", difficulty: "Intermediate", equipment: 'Dumbbells', image: "https://i.pinimg.com/originals/69/b9/cf/69b9cf8b3c0a6d971ce0e1ac83a17c03.gif",
+description: "1.Stand with your feet hip-width apart. Lift up your left knee to your chest.
+2.Switch to lift your right knee to your chest. Continue the movement, alternating legs and moving at a sprinting or running pace.")
+
+Exercise.create(name: "Bench", difficulty: "Intermediate", equipment: 'None', image: "https://i.pinimg.com/originals/69/b9/cf/69b9cf8b3c0a6d971ce0e1ac83a17c03.gif",
+description: "1.Stand with your feet hip-width apart. Lift up your left knee to your chest.
+2.Switch to lift your right knee to your chest. Continue the movement, alternating legs and moving at a sprinting or running pace.")

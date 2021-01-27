@@ -4,6 +4,8 @@ class WorkoutsController < ApplicationController
     if params[:user_id] && @user = User.find_by_id(params[:user_id])
       @workouts = @user.workouts
       render 'user_workouts'
+    elsif params[:alphabetically]
+      @workouts = Workout.alphabetically
     else
       @workouts = Workout.all
     end
