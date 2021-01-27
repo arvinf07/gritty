@@ -9,10 +9,17 @@ class ExercisesController < ApplicationController
   end
 
   def index  
-    if params[:difficulty]
-      @exercises = Exercise.by_difficulty(params[:difficulty])
-    else
+    if params[:difficulty].blank? && params[:equipment].blank?
       @exercises = Exercise.all
+
+    elsif params[:difficulty].blank? && params[:equipment]
+      @exercises = Exercise.by_equipment(params[:equipment])
+
+    elsif params[:difficulty] && params[:equipment].blank?
+      @exercises = Exercise.by_difficulty(params[:difficulty])
+
+    else
+      @exercises = Exercise.by_difficulty(params[:difficulty]).by_equipment(params[:equipment])
     end
   end
 

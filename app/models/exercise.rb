@@ -5,6 +5,7 @@ class Exercise < ApplicationRecord
   validates :name, uniqueness: true, presence: true
 
   scope :by_difficulty, -> (difficulty) { where(difficulty: difficulty) }
+  scope :by_equipment, -> (equipment) { where(equipment: equipment) }
   
 
   #############Should this be a helper??#################
