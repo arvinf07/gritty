@@ -1,4 +1,4 @@
-# work_it
+# gritty
 
 # Introduction
 A place where users can create and display their workouts to other users. Receive feedback from other users about the workout and motivate eachother to keep grinding for your fitness goals.
