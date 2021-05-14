@@ -18,10 +18,13 @@ class WorkoutsController < ApplicationController
   end
 
   def create
+    # Make it so that exercises workout are no blank
+    # When re-rendered with error messages
     @workout = current_user.workouts.build(workout_params)
     if @workout.save
       redirect_to workout_path(@workout)
     else
+      @exercises = Exercise.all
       @errors = @workout.errors.full_messages
       10.times {@workout.exercises_workouts.build}
       render 'new'
@@ -29,7 +32,6 @@ class WorkoutsController < ApplicationController
   end
 
   def show
-    ##Why is it reapeating sets and reps 
     current_workout
     @user = User.find_by_id(@workout.user_id)
     redirect_to workouts_path, alert: "That workout does not exist" if @workout.nil?

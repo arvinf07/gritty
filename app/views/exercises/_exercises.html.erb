@@ -1,9 +1,15 @@
-<% @exercises.each do |exercise| %>
-  <div>
-    <h3><%= exercise.name %></h3>
-    <a href="<%=exercise_path(exercise)%>"><%= image_tag exercise.image, size: "100x100" %><br></a>
-    Equipment: <%= exercise.equipment %><br>
-    Difficulty: <%= exercise.difficulty %>   
-    <br> 
-  </div>  
-<%end%>
+<div class="container-fluid row row-cols-1 row-cols-md-5 g-4">
+  <% @exercises.each do |exercise| %>
+
+    <div class='row'>
+      <div class='col pb-3'>
+      <h3><%= exercise.name %></h3>
+      <a href="<%=exercise_path(exercise)%>"><%= image_tag exercise.image, size: "100x100" %><br></a>
+      Equipment: <%= exercise.equipment %><br>
+      Difficulty: <%= exercise.difficulty %>   
+      <br> 
+      </div>  
+    </div>
+    
+  <%end%>
+</div>

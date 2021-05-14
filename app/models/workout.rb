@@ -11,8 +11,6 @@ class Workout < ApplicationRecord
  
   scope :alphabetically, ->{ order(:name) }
 
-
-
   def creator
     self.user.name
   end
