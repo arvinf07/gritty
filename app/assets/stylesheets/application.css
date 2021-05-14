@@ -19,6 +19,8 @@
   background: linear-gradient(90deg, #f8b869 50%, #7e8486 50%);
 }  */
 
+@import "materialize";
+
 div.field_with_errors{
   background: #c51244 !important;
   padding: 10px !important;

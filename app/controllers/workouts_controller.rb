@@ -12,6 +12,7 @@ class WorkoutsController < ApplicationController
   end
 
   def new 
+    @exercises = Exercise.all
     @workout = Workout.new
     10.times {@workout.exercises_workouts.build}
   end
@@ -36,6 +37,7 @@ class WorkoutsController < ApplicationController
 
   def edit
     redirect_if_not_authorized(current_workout)
+    @exercises = Exercise.all
     5.times {@workout.exercises_workouts.build}
   end
 

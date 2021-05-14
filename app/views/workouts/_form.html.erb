@@ -5,7 +5,7 @@
   <p>Add Exercises</p>
     <%= f.fields_for :exercises_workouts do |e| %>
       <%=delete_exercise(e)%>
-      <%= e.collection_select :exercise_id, Exercise.all, :id, :name, value: :exercise_id %>
+      <%= e.collection_select :exercise_id, @exercises, :id, :name, value: :exercise_id %>
       <%= e.label :sets %>
       <%= e.number_field :sets, min: 1, max: 100 %>
       <%= e.label :reps %>
