@@ -19,6 +19,12 @@
   background: linear-gradient(90deg, #f8b869 50%, #7e8486 50%);
 }  */
 
+body {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 10px
+}
+
 div.field_with_errors{
   background: #c51244 !important;
   padding: 10px !important;
