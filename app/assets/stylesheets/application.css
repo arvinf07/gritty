@@ -15,7 +15,8 @@
  */
 
  body, html {
-  height: 75%;
+  height: 100%;
+  padding: 0;
 }
 
 /* The hero image */
@@ -24,7 +25,7 @@
 background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("gritty-hero-image.jpeg");
 
 /* Set a specific height */
-height: 100%;
+height: 75%;
 
 /* Position and center the image to scale nicely on all screens */
 background-position: center;
@@ -43,10 +44,18 @@ transform: translate(-50%, -50%);
 color: #CDD7D6;;
 }
 
+.hero-text h1 {
+  font-family: Titling Gothic FB Compressed Medium,sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 90px;
+  line-height: 1em;
+  /* margin-bottom: 100px; */
+}
+
 
 /* Above is for hero image */
 
-.hero-image
 
 div.field_with_errors{
   background: #c51244 !important;
