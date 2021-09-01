@@ -15,7 +15,7 @@
  */
 
  body, html {
-  height: 100%;
+  height: 75%;
 }
 
 /* The hero image */
@@ -24,7 +24,7 @@
 background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("gritty-hero-image.jpeg");
 
 /* Set a specific height */
-height: 50%;
+height: 100%;
 
 /* Position and center the image to scale nicely on all screens */
 background-position: center;
@@ -40,10 +40,13 @@ position: absolute;
 top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
-color: white;
+color: #CDD7D6;;
 }
+
+
 /* Above is for hero image */
 
+.hero-image
 
 div.field_with_errors{
   background: #c51244 !important;
