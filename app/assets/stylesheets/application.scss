@@ -15,8 +15,7 @@
  */
 
  // Your variable overrides
-$bg-primary: #000;
-
+$primary: dodgerblue;
 
 // Bootstrap and its default variables
 @import "bootstrap";
@@ -108,10 +107,8 @@ li.nav-item{
   color: rgba(240, 114, 11, 0.932);
 }
 
-.bg-primary{
-  color: red;
-  background-color: red;
-}
+
+
 
 ul.rounded-pill{
   background-color: #4b4848;
